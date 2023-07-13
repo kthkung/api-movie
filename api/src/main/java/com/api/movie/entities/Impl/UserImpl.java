@@ -1,8 +1,8 @@
-package com.api.movie.entities.Impl;
+package com.api.movie.entities.impl;
 
 import com.api.movie.entities.User;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @NamedNativeQueries({
         @NamedNativeQuery(name = "getUser",
-                query = " SELECT id, username, email"
-                        + " FROM tb_user"
-                        + " WHERE id = :id",
+                query = " SELECT * FROM tb_user",
                 resultClass = UserImpl.class),
 })
 
@@ -28,5 +26,14 @@ public class UserImpl implements User {
 
         @Column(name = "email")
         private String email;
+
+        @Column(name = "password")
+        private String password;
+
+        @Column(name = "created_at")
+        private String createdAt;
+
+        @Column(name = "updated_at")
+        private String updatedAt;
 
 }

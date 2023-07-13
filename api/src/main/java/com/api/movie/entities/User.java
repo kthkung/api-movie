@@ -10,4 +10,13 @@ public interface User {
     
     public String getEmail();
     public void setEmail(String email);
+
+    public String getPassword();
+    public void setPassword(String password);
+
+    public String getCreatedAt();
+    public void setCreatedAt(String createdAt);
+
+    public String getUpdatedAt();
+    public void setUpdatedAt(String updatedAt);
 }
